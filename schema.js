@@ -12,6 +12,16 @@ const {
 
 //Create TYPE
 
+// Rocket Type
+const RocketType = GraphQLObjectType({
+  name: 'Rocket',
+  fields: {
+    rocket_id: { type: GraphQLString },
+    rocket_name: { type: GraphQLString },
+    rocket_type: { type: GraphQLString },
+  },
+});
+
 //Launch Type
 
 const LaunchType = new GraphQLObjectType({
