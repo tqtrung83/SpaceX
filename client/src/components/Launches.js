@@ -3,7 +3,7 @@ import { useQuery, gql } from '@apollo/client';
 
 const LAUNCHES_QUERY = gql`
   query LaunchesQuery {
-    Launches {
+    launches {
       flight_number
       mission_name
       launch_date_local
@@ -15,17 +15,21 @@ const LAUNCHES_QUERY = gql`
 const Launches = () => {
   const { loading, error, data } = useQuery(LAUNCHES_QUERY);
 
-  if (loading) return <h4>Loading...</h4>;
-  if (error) console.log(error);
-
   return (
-    <div>
-      <h1 className='display-4 my-3'>Launches</h1>
-      <h2>Test</h2>
-      {/* {data.Launches.map((launch, index) => (
-        <h2 key={index}>{launch.flight_number}</h2>
-      ))} */}
-    </div>
+    <>
+      <div>
+        <h1 className='display-4 my-3'>Launches</h1>
+        {loading ? (
+          <h4>Loading...</h4>
+        ) : error ? (
+          console.log(error)
+        ) : (
+          data.launches.map((launch, index) => (
+            <h2 key={index}>{launch.mission_name}</h2>
+          ))
+        )}
+      </div>
+    </>
   );
 };
 
