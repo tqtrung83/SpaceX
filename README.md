@@ -2,7 +2,7 @@
 The web application using React, GraphQL, Apollo, Express and SpaceX API to display launches information
 
 # Install
-##Install dependencies (server & client)
+## Install dependencies (server & client)
 npm install
 cd client && npm install
 
