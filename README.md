@@ -1,7 +1,7 @@
 # SpaceX
 The web application using React, GraphQL, Apollo, Express and SpaceX API to display launches information
 
-# Install
+# Installation:
 ## Install dependencies (server & client)
 npm install
 cd client && npm install
