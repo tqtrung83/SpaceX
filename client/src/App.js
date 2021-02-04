@@ -2,6 +2,7 @@ import './App.css';
 import logo from './logo.png';
 import { ApolloClient, InMemoryCache } from '@apollo/client';
 import { ApolloProvider } from '@apollo/client';
+import Launches from './components/Launches';
 
 const client = new ApolloClient({
   uri: 'http://localhost:5000/graphql',
@@ -17,6 +18,7 @@ function App() {
           alt='SpaceX'
           style={{ width: 200, display: 'block', margin: 'auto' }}
         />
+        <Launches />
       </div>
     </ApolloProvider>
   );
